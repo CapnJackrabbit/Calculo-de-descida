@@ -2,8 +2,8 @@ while True:
     try:
 
         altitude_final = int(input('Entre com a altitude final: '))
-        altitude_inicial = int(input('Entre com a altitude inicial, em FL: '))
-        altitude_inicial = (altitude_inicial * 100)
+        altitude_inicial = int(input('Entre com a altitude inicial: '))
+        #altitude_inicial = (altitude_inicial * 100)        para usar FL ao invés de altitude
         if altitude_inicial < altitude_final:
             print('A altitude inicial não pode ser menor que a altitude final.')
             raise ValueError
