@@ -7,9 +7,9 @@ while True:
             print('A altitude inicial não pode ser menor que a altitude final.')
             raise ValueError
         razao_descida = int(input('Entre com a razão de descida: '))
-        if razao_descida >= 0:
-            print('A razão de descida não pode ser nulo ou maior que zero.')
-            raise ValueError
+        # if razao_descida >= 0:
+        #     print('A razão de descida não pode ser nulo ou maior que zero.')
+            # raise ValueError
         velocidade_indicada = float(input('Entre com a velocidade indicada: '))
         if velocidade_indicada <= 0:
             print('A velocidade indicada não pode ser nula ou negativa.')
