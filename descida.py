@@ -2,7 +2,8 @@ while True:
     try:
 
         altitude_final = int(input('Entre com a altitude final: '))
-        altitude_inicial = int(input('Entre com a altitude inicial: '))
+        altitude_inicial = int(input('Entre com a altitude inicial, em FL: '))
+        altitude_inicial = (altitude_inicial * 100)
         if altitude_inicial < altitude_final:
             print('A altitude inicial não pode ser menor que a altitude final.')
             raise ValueError
@@ -16,7 +17,7 @@ while True:
             raise ValueError
 
         delta_altura = altitude_final - altitude_inicial
-        tempo = delta_altura / razao_descida
+        tempo = abs(delta_altura / razao_descida)
         fator = ((altitude_final + altitude_inicial) * 0.00001) + 1
         va = velocidade_indicada * fator
 
@@ -24,6 +25,7 @@ while True:
         print('ΔH = {} pés'.format(delta_altura))
         print('Tempo total = {:.1f} minutos'.format(tempo))
         print('Velocidade aerodinâmica = {:.2f}'.format(va))
+        print()
     
     except ValueError:
         print('O valor informado é inválido')
